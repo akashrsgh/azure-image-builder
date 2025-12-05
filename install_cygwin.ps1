@@ -18,3 +18,5 @@ $Arguments = @(
 
 Start-Process -FilePath 'C:\temp\setup-x86_64.exe' -ArgumentList $Arguments -Wait -NoNewWindow
 Remove-Item -Path 'C:\\temp\\setup-x86_64.exe'
+New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\cygwin64\bin\bash.exe" -PropertyType String -Force
+Add-Content -Path "C:\Users\tester\.bashrccc" -Value "export PATH=/usr/local/bin:/usr/bin:$PATH" 
